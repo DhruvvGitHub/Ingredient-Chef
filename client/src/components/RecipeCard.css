@@ -1,12 +1,21 @@
 .recipe-card {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-subtle);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color-strong);
 }
 
 .recipe-content {
@@ -14,63 +23,77 @@
 }
 
 .recipe-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .recipe-section {
-  margin-bottom: 1rem;
+  margin-bottom: 0.95rem;
 }
 
 .recipe-section h4 {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .recipe-ingredients,
 .recipe-steps {
-  padding-left: 1.25rem;
+  padding-left: 1.1rem;
   color: var(--text-primary);
   font-size: 0.95rem;
 }
 
 .recipe-ingredients li,
 .recipe-steps li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
+  color: rgba(15, 23, 42, 0.92);
 }
 
 .recipe-ingredients {
   list-style-type: disc;
 }
 
+.recipe-steps {
+  list-style-position: outside;
+}
+
 .recipe-actions {
   margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  gap: 0.6rem;
 }
 
 .btn-secondary {
   width: 100%;
-  padding: 0.5rem;
-  background-color: transparent;
-  border: 1px solid var(--accent-primary);
-  border-radius: var(--radius-sm);
-  color: var(--accent-primary);
-  font-weight: bold;
+  padding: 0.72rem 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  color: var(--text-primary);
+  font-weight: 650;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
 .btn-secondary:hover {
-  background-color: var(--bg-primary);
+  transform: translateY(-1px);
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.16);
 }
 
 .btn-delete {
-  border-color: var(--error-text);
-  color: var(--error-text);
+  border-color: rgba(220, 38, 38, 0.22);
+  color: rgba(220, 38, 38, 0.95);
 }
 
 .btn-delete:hover {
   background-color: var(--error-bg);
+  border-color: rgba(220, 38, 38, 0.28);
 }

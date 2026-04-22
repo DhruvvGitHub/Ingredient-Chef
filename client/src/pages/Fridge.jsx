@@ -32,10 +32,20 @@ const Fridge = () => {
 
   return (
     <>
-      <header className="app-header">
-        <h1>Smart Recipe Finder</h1>
-        <p>Turn your fridge leftovers into delicious meals.</p>
-      </header>
+      <section className="hero">
+        <div className="hero-inner">
+          <h1>Turn your ingredients into delicious recipes—instantly.</h1>
+          <p>
+            Add what you already have at home. We’ll suggest tasty, practical recipes with clear steps—so you can cook
+            without overthinking.
+          </p>
+          <div className="hero-badges" aria-label="Product highlights">
+            <span className="badge">Fast suggestions</span>
+            <span className="badge">Ingredient-first</span>
+            <span className="badge">Save favorites</span>
+          </div>
+        </div>
+      </section>
       
       <main className="main-layout">
         <aside className="left-column">
@@ -46,8 +56,8 @@ const Fridge = () => {
           {recipes.length === 0 ? (
             <div className="empty-recipes">
               <div className="empty-icon">🍳</div>
-              <h3>No recipes generated yet</h3>
-              <p>Add your ingredients to the fridge panel and ask what you can cook!</p>
+              <h3>Add ingredients to get started</h3>
+              <p>Build your fridge list, then tap “What can I cook?” to generate recipes tailored to what you have.</p>
             </div>
           ) : (
             <div className="recipe-grid">

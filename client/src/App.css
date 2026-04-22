@@ -1,27 +1,65 @@
 .app-container {
-  max-width: 1000px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.app-header {
-  margin-bottom: 2rem;
+/* Hero */
+.hero {
+  position: relative;
+  margin-bottom: 1.75rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: radial-gradient(1200px 500px at 10% 10%, rgba(79, 70, 229, 0.22), transparent 60%),
+    radial-gradient(900px 450px at 80% 20%, rgba(124, 58, 237, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75));
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.app-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.25rem;
+.hero-inner {
+  padding: 2.25rem 1.5rem;
 }
 
-.app-header p {
-  font-size: 1rem;
+.hero h1 {
+  font-size: clamp(2rem, 3.4vw, 3.15rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 58ch;
   color: var(--text-secondary);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-color);
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-xs);
 }
 
 .main-layout {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 @media (min-width: 600px) {
@@ -31,9 +69,9 @@
   }
   
   .left-column {
-    flex: 0 0 300px;
+    flex: 0 0 360px;
     position: sticky;
-    top: 5rem;
+    top: 5.25rem;
   }
   
   .right-column {
@@ -42,16 +80,18 @@
 }
 
 .empty-recipes {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 3rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-xl);
+  padding: 3.25rem 1.75rem;
   text-align: center;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-sm);
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
 }
 
 .empty-icon {
@@ -67,16 +107,54 @@
 .recipe-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .toast {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: var(--text-primary);
-  color: var(--bg-secondary);
-  padding: 1rem;
-  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.92);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
   z-index: 50;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 520px) {
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+.spinner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-secondary);
+}
+
+.spinner::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(79, 70, 229, 0.25);
+  border-top-color: rgba(79, 70, 229, 0.9);
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 500;
 }

@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <span className="logo-icon">🍳</span>
-          <span className="logo-text">SmartRecipe</span>
+          <span className="logo-text">Ingredient Chef</span>
         </div>
         <div className="navbar-links">
           <NavLink 
