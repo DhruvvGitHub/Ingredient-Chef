@@ -19,7 +19,7 @@ Each recipe must have exactly 5 steps. Keep steps short (1 sentence each).`;
 
     const apiKey = process.env.GEMINI_API_KEY;
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         contents: [{ parts: [{ text: prompt }] }]
       },
