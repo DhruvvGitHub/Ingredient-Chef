@@ -76,3 +76,9 @@
   color: var(--accent-primary);
   background-color: rgba(99, 102, 241, 0.05);
 }
+
+.btn-delete:hover {
+  border-color: var(--error-text);
+  color: var(--error-text);
+  background-color: var(--error-bg);
+}

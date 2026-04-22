@@ -1,7 +1,7 @@
 import React from 'react';
 import './RecipeCard.css';
 
-const RecipeCard = ({ name, ingredients, steps, onSave }) => {
+const RecipeCard = ({ name, ingredients, steps, onSave, onDelete }) => {
   return (
     <div className="recipe-card">
       <div className="recipe-content">
@@ -27,9 +27,16 @@ const RecipeCard = ({ name, ingredients, steps, onSave }) => {
       </div>
       
       <div className="recipe-actions">
-        <button className="btn-secondary" onClick={onSave}>
-          Save Recipe
-        </button>
+        {onSave && (
+          <button className="btn-secondary" onClick={onSave}>
+            Save Recipe
+          </button>
+        )}
+        {onDelete && (
+          <button className="btn-secondary btn-delete" onClick={onDelete}>
+            Delete Recipe
+          </button>
+        )}
       </div>
     </div>
   );
