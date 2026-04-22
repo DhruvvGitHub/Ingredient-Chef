@@ -33,7 +33,14 @@ Each recipe must have exactly 5 steps. Keep steps short (1 sentence each).`;
     // Strip markdown code fences if present using regex
     textResponse = textResponse.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
 
-    const parsedResult = JSON.parse(textResponse);
+    let parsedResult;
+    try {
+      parsedResult = JSON.parse(textResponse);
+    } catch (parseError) {
+      console.error("Failed to parse Gemini response:", textResponse);
+      return res.status(500).json({ error: "Couldn't parse suggestions, try again" });
+    }
+    
     res.json({ recipes: parsedResult });
 
   } catch (error) {

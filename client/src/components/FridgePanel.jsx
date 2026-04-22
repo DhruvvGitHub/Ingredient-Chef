@@ -24,7 +24,7 @@ const FridgePanel = ({ onRecipesGenerated }) => {
 
   const handleGenerate = async () => {
     if (ingredients.length === 0) {
-      setError('Please add some ingredients first.');
+      window.alert('Add at least 1 ingredient');
       return;
     }
 
@@ -38,7 +38,11 @@ const FridgePanel = ({ onRecipesGenerated }) => {
       onRecipesGenerated(response.data.recipes);
     } catch (err) {
       console.error(err);
-      setError(err.response?.data?.error || 'Failed to generate recipes. Please try again.');
+      if (!err.response) {
+        setError('Network error: Unable to connect to the server.');
+      } else {
+        setError(err.response?.data?.error || 'Failed to generate recipes. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
@@ -81,7 +85,7 @@ const FridgePanel = ({ onRecipesGenerated }) => {
       <button 
         className="btn-primary generate-btn" 
         onClick={handleGenerate} 
-        disabled={loading || ingredients.length === 0}
+        disabled={loading}
       >
         {loading ? <span className="spinner"></span> : 'What can I cook?'}
       </button>

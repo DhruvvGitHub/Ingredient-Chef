@@ -51,9 +51,9 @@ const Fridge = () => {
             </div>
           ) : (
             <div className="recipe-grid">
-              {recipes.map((recipe, idx) => (
+              {recipes.map((recipe) => (
                 <RecipeCard 
-                  key={idx} 
+                  key={recipe.name} 
                   name={recipe.name} 
                   ingredients={recipe.ingredients} 
                   steps={recipe.steps} 
