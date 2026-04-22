@@ -87,7 +87,7 @@ const FridgePanel = ({ onRecipesGenerated }) => {
         onClick={handleGenerate} 
         disabled={loading}
       >
-        {loading ? <span className="spinner"></span> : 'What can I cook?'}
+        {loading ? <span className="spinner">Finding recipes...</span> : 'What can I cook?'}
       </button>
     </div>
   );

@@ -1,48 +1,39 @@
 .app-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
 }
 
 .app-header {
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .app-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
 }
 
 .app-header p {
-  font-size: 1.125rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
 }
 
 .main-layout {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .main-layout {
     flex-direction: row;
     align-items: flex-start;
   }
   
   .left-column {
-    flex: 0 0 350px;
+    flex: 0 0 300px;
     position: sticky;
-    top: 2rem;
+    top: 5rem;
   }
   
   .right-column {
@@ -52,11 +43,11 @@
 
 .empty-recipes {
   background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
-  padding: 4rem 2rem;
+  border-radius: var(--radius-lg);
+  padding: 3rem 1.5rem;
   text-align: center;
-  border: 1px dashed var(--border-color);
-  color: var(--text-secondary);
+  box-shadow: var(--shadow-subtle);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,27 +55,19 @@
 }
 
 .empty-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  opacity: 0.8;
 }
 
 .empty-recipes h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
 }
 
 .recipe-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .recipe-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .toast {
@@ -93,21 +76,7 @@
   right: 2rem;
   background: var(--text-primary);
   color: var(--bg-secondary);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  font-weight: 500;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
   z-index: 50;
-  animation: slideUp 0.3s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }

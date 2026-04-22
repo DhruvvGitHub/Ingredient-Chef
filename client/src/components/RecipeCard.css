@@ -1,19 +1,12 @@
 .recipe-card {
   background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
-  transition: var(--transition-normal);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-}
-
-.recipe-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
 }
 
 .recipe-content {
@@ -21,26 +14,25 @@
 }
 
 .recipe-title {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent-primary);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .recipe-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .recipe-section h4 {
   font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .recipe-ingredients,
 .recipe-steps {
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
   color: var(--text-primary);
   font-size: 0.95rem;
 }
@@ -55,30 +47,30 @@
 }
 
 .recipe-actions {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border-color);
 }
 
 .btn-secondary {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem;
   background-color: transparent;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
-  font-weight: 500;
-  transition: var(--transition-fast);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+  color: var(--accent-primary);
+  font-weight: bold;
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  background-color: rgba(99, 102, 241, 0.05);
+  background-color: var(--bg-primary);
+}
+
+.btn-delete {
+  border-color: var(--error-text);
+  color: var(--error-text);
 }
 
 .btn-delete:hover {
-  border-color: var(--error-text);
-  color: var(--error-text);
   background-color: var(--error-bg);
 }

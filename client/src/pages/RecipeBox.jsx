@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import RecipeCard from '../components/RecipeCard';
 
@@ -44,14 +45,16 @@ const RecipeBox = () => {
 
       {loading ? (
         <div className="empty-recipes">
-          <div className="spinner" style={{ marginBottom: '1rem', borderColor: 'var(--text-secondary)', borderTopColor: 'var(--accent-primary)' }}></div>
-          <p>Loading your recipes...</p>
+          <span className="spinner">Loading your recipes...</span>
         </div>
       ) : savedRecipes.length === 0 ? (
         <div className="empty-recipes">
           <div className="empty-icon">📂</div>
           <h3>Your recipe box is empty</h3>
-          <p>Your recipe box is empty — find something to cook on the Fridge page!</p>
+          <p style={{ marginBottom: '1.5rem' }}>Find something to cook with your leftover ingredients.</p>
+          <Link to="/">
+            <button className="btn-primary" style={{ width: 'auto', padding: '0.75rem 1.5rem' }}>Go to Fridge</button>
+          </Link>
         </div>
       ) : (
         <div className="recipe-grid">
